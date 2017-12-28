@@ -14,11 +14,9 @@ filebeat:
       paths:
         - /var/log/syslog
         - /var/log/auth.log
-      document_type: syslog
     -
       paths:
         - /var/log/spring-music.log
-      document_type: log4j
       multiline:
         pattern: '^[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}'
         negate: true
@@ -27,4 +25,3 @@ filebeat:
       paths:
         - /usr/local/tomcat/logs/*.out
         - /usr/local/tomcat/logs/*.log
-      document_type: tomcat
